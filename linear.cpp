@@ -13,5 +13,5 @@ int main(){
     int size  = 7;
     int ele = 5;
     cout<<LinearSearch(arr,ele,size);
-return 0;
+    return 0;
 }
