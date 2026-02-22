@@ -1,0 +1,29 @@
+// https://leetcode.com/problems/squares-of-a-sorted-array/
+class Solution {
+public:
+     vector<int> solve(vector<int>& nums){
+        vector<int> ans ;
+        for(int x:nums){
+            ans.push_back(x*x);
+        }
+        sort(ans.begin(),ans.end());
+        return ans;
+     }
+    vector<int> sortedSquares(vector<int>& nums) {
+        vector<int> ans;
+        int l=0;
+        int r= nums.size()-1;
+        while(l<=r){
+            if(abs(nums[l])>=abs(nums[r])){
+                ans.push_back(nums[l]*nums[l]);
+                l++;
+            }
+            else{
+                ans.push_back(nums[r]*nums[r]);
+                r--;
+            }
+        }
+        reverse(ans.begin(),ans.end());
+        return ans;
+    }
+};
